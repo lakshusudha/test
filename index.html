@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simple Responsive Navbar</title>
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Arial; }
+
+  /* Navbar */
+  .navbar {
+    background:#333;
+    padding:10px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .nav-links {
+    display:flex;
+    gap:15px;
+  }
+
+  .nav-links a {
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+  }
+
+  /* Hamburger */
+  .menu-icon {
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+  }
+
+  /* Mobile menu */
+  #menu-toggle { display:none; }
+
+  .mobile-menu {
+    display:none;
+    flex-direction:column;
+    background:#444;
+  }
+
+  .mobile-menu a {
+    padding:12px;
+    border-top:1px solid #555;
+    color:white;
+    text-decoration:none;
+  }
+
+  #menu-toggle:checked ~ .mobile-menu {
+    display:flex;
+  }
+
+  @media (max-width:600px) {
+    .nav-links {
+      display:none;
+    }
+    .menu-icon {
+      display:block;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <h2>My web page</h2>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <label for="menu-toggle" class="menu-icon" style="color:white;">☰</label>
+  <input type="checkbox" id="menu-toggle" />
+</div>
+<div class="mobile-menu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
+
+</body>
+</html>
